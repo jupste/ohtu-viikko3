@@ -1,3 +1,6 @@
+plugins {
+  id 'com.github.johnrengelman.shadow' version '2.0.1'
+}
 apply plugin: 'java'
 apply plugin: 'application'
 
@@ -18,3 +21,4 @@ dependencies {
     compile group: 'org.apache.httpcomponents', name: 'fluent-hc', version: '4.5.6'
 
 }
+
