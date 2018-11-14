@@ -29,7 +29,13 @@ public class AuthenticationService {
         if (userDao.findByName(username) != null) {
             status.addError("username is already taken");
         }
-
+        String passwordTest=password.replaceAll("[*a-zA-Z]", "");
+        if(password.length()<8 || passwordTest.length()==0){
+            status.addError("bad password");
+        }
+        if(!password.equals(passwordConfirmation)){
+            status.addError("passwords don't match");
+        }
         if (username.length()<3 ) {
             status.addError("username should have at least 3 characters");
         }
